@@ -23,6 +23,20 @@ npx create-react-app kmong-copy-w1 --template typescript
 curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
+### 크몽 메인화면 클론
+
+학습 목표
+
+CSS in JS 스타일링 개념 이해
+TypeScript 개념 이해
 
 ### 요구 사항 
 
+1. kmong.com  main Page Markup 
+
+```   
+- Header
+- Main
+- .... 
+- Footer
+```
