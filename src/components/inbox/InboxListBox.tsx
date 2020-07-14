@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import UserThumbnail from './UserThumbnail';
+import UserThumbnail from '../UserThumbnail';
 
 function InboxListBox() {
     return (

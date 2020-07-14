@@ -6,7 +6,7 @@ import UserProfileBox from './UserProfileBox';
 function Inbox() {
     return (
         <InboxContainerBlock>
-            <InboxListBlock>
+            <InboxLeftBlock>
                 <InboxSearchBlock>
                     <span>전체메시지</span>
                     <SearchImg
@@ -14,11 +14,13 @@ function Inbox() {
                         alt="검색 아이콘"
                     />
                 </InboxSearchBlock>
-                <InboxListBox />
-                <InboxListBox />
-                <InboxListBox />
-                <InboxListBox />
-            </InboxListBlock>
+                <InboxListBlock>
+                    <InboxListBox />
+                    <InboxListBox />
+                    <InboxListBox />
+                    <InboxListBox />
+                </InboxListBlock>
+            </InboxLeftBlock>
             <InboxRightBlock>
                 <InboxDetailBlock>
                     <InboxChatBlock>
@@ -40,11 +42,17 @@ const InboxContainerBlock = styled.div`
     margin-top: 30px;
     border: 1px solid gray;
     display: flex;
+    height: calc(100vh - 191px);
+`
+
+const InboxLeftBlock = styled.div`
+    border-right: 1px solid gray;
+    flex-basis: 278px;
 `
 
 const InboxListBlock = styled.div`
-    border-right: 1px solid gray;
-    flex-basis: 278px;
+    overflow: auto;
+    height: calc(100vh - 253px);
 `
 
 const SearchImg = styled.img`
@@ -63,10 +71,9 @@ const InboxRightBlock = styled.div`
     flex-direction: column;
     flex: 1;
 `
-
 const InboxDetailBlock = styled.div`
     display: flex;
-    flex: 1;
+    height: calc(100vh - 291px);
 `
 
 const InboxChatBlock = styled.div`
@@ -78,11 +85,12 @@ const InboxChatBlock = styled.div`
 const InboxUserBlock = styled.div`
     border-left: 1px solid gray;
     flex-basis: 243px;
+    overflow: auto;
 `
 
 const InboxFooterBlock = styled.div`
     border-top: 1px solid gray;
-    flex-basis: 145px;
+    flex-basis: 100px;
 `
 
 export default Inbox

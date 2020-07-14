@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import UserThumbnail from './UserThumbnail';
+import UserThumbnail from '../UserThumbnail';
 
 function UserProfileBox() {
     return (
@@ -10,7 +10,8 @@ function UserProfileBox() {
                 alt="유저프로필"
                 width={70}
             />
-            <Username>비케이</Username>
+            <UsernameBlock>비케이</UsernameBlock>
+            <MemoBlock>메모메모</MemoBlock>
             <UserInfoWrapper>
                 <UserInfoBlock>
                     <UserInfoTitle>만족도</UserInfoTitle>
@@ -40,8 +41,17 @@ const UserProfileBlock = styled.div`
     padding: 30px;
 `
 
-const Username = styled.div`
+const UsernameBlock = styled.div`
     margin-top: 10px;
+    color: #303441;
+    font-size: 15px;
+    font-weight: 700;
+`
+
+const MemoBlock = styled.div`
+    margin-top: 5px;
+    color: #555969;
+    font-size: 13px;
 `
 
 const UserInfoWrapper = styled.div`
