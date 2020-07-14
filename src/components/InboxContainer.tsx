@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "@emotion/styled";
 import InboxSidebar from "./InboxSidebar";
+import View from "./View";
 
 function InboxContainer() {
   return (
     <InboxContainerBlock>
       <Main>
         <InboxSidebar />
+        <View />
       </Main>
     </InboxContainerBlock>
   );

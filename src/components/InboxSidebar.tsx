@@ -37,6 +37,7 @@ const InboxSidebarBlock = styled.div`
   border-right: 1px solid #e4e5ed;
   display: flex;
   flex-direction: column;
+  background-color: #f5f6fa;
 `;
 
 const Header = styled.div`
@@ -45,6 +46,7 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   padding: 0 24px;
+  background-color: #ffffff;
 `;
 
 const Channels = styled.div`

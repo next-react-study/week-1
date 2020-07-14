@@ -34,6 +34,12 @@ const ChannelItemBlock = styled.div`
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #e4e5ed;
+  background-color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eaeaea;
+  }
 `;
 
 const ImageWrapper = styled.div`
