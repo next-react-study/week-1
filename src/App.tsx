@@ -2,9 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import Market from './pages/Market';
-import CustomProject from'./pages/CustomProject';
-import Enterprise from'./pages/Enterprise';
-
+import CustomProject from './pages/CustomProject';
+import Enterprise from './pages/Enterprise';
 
 function App() {
   return (

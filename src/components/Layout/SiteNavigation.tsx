@@ -1,11 +1,10 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-import Wrapper from './Layout/Wrapper';
+import layoutBase from '../../style/layoutBase';
 
 const StyledLink = styled(Link)`
-  font-family: NotoSansCJKkr;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: -0.25px;
@@ -14,7 +13,9 @@ const StyledLink = styled(Link)`
 `;
 
 // TODO Wrapper에서 css props 받아서 처리하도록 수정
-const SiteNavigationWrapper = styled(Wrapper)`
+const SiteNavigationWrapper = styled.div`
+  ${layoutBase};
+  display: flex;
   justify-content: space-between;
   height: 40px;
 `;
@@ -32,11 +33,7 @@ const EnterPriseCTALinkWrapper = styled.div`
   align-items: center;
 `;
 
-interface SiteNavigationProps {
-  children?: ReactNode;
-}
-
-function SiteNavigation({}: SiteNavigationProps) {
+function SiteNavigation() {
   return (
     <SiteNavigationWrapper>
       <SiteNavsWrapper>

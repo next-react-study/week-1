@@ -7,7 +7,6 @@ const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-//TODO Css props으로 받아서 처리할 수 있도록 작업
 
 export interface WrapperProps {
   children?: ReactNode;

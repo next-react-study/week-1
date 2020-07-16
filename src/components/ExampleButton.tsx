@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import styled from '@emotion/styled'
+import React, { FC } from 'react';
+import styled from '@emotion/styled';
 
 const Button = styled.button`
   padding: 32px;
@@ -11,12 +11,10 @@ const Button = styled.button`
   &:hover {
     color: white;
   }
-`
+`;
 
 const ExampleButton: FC = () => {
-    return (
-        <Button>This my button component.</Button>
-    )
-}
+  return <Button>This my button component.</Button>;
+};
 
-export default ExampleButton
+export default ExampleButton;
