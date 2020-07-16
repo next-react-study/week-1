@@ -6,10 +6,45 @@ import StarIcon from './StarIcon';
 import InboxBuddyCards from './InboxBuddyCards';
 import buddyCards from '../constants/buddyCards';
 
+interface message {
+  isMine: boolean;
+  content: string;
+  date: string;
+  time: string;
+  id: string;
+}
+
 interface InboxProps {
   active?: boolean;
+  // 빠른 테스트 위해 잠시 ?
+  messages?: message[];
 }
-function Inbox({ active = false }: InboxProps) {
+
+const exampleMassages: message[] = [
+  {
+    isMine: false,
+    content: '안녕하세요',
+    date: '19.08.05',
+    time: '11:19',
+    id: 'message-0',
+  },
+  {
+    isMine: true,
+    content: '안녕하세요',
+    date: '19.08.05',
+    time: '11:20',
+    id: 'message-1',
+  },
+  {
+    isMine: false,
+    content: '제 서비스 사시죠? 콜콜 ',
+    date: '19.08.06',
+    time: '11:30',
+    id: 'message-2',
+  },
+];
+
+function Inbox({ active = false, messages = exampleMassages }: InboxProps) {
   return (
     <InboxBlock>
       <InboxAsdie>
@@ -27,7 +62,16 @@ function Inbox({ active = false }: InboxProps) {
         {active ? (
           <InboxActiveBlock>
             <InboxActiveMain>
-              <InboxMessageBox>Messages</InboxMessageBox>
+              <InboxMessageBox>
+                {exampleMassages.map(({ isMine, content, date, time, id }) => (
+                  <div key={id}>
+                    <div>{isMine}</div>
+                    <div>{content}</div>
+                    <div>{date}</div>
+                    <div>{time}</div>
+                  </div>
+                ))}
+              </InboxMessageBox>
               <InboxBuddyDetailBox>
                 <Profile
                   src="https://d2v80xjmx68n4w.cloudfront.net/members/thumbs/Gg3pg1580953703.jpg"
@@ -93,7 +137,7 @@ function Inbox({ active = false }: InboxProps) {
     </InboxBlock>
   );
 }
-// 질문거리 너무 다 스타일을 주고 있다 ...
+// 질문거리 너무 다 스타일 style을 주고 있다 ...
 //  1.
 // Form 에서 nested로 접근해서 줄 수 있나 ? 기본 tag는 되는데
 //
@@ -159,6 +203,17 @@ const InboxMessageForm = styled.form`
     height: 56px;
   }
 `;
+
+interface InboxMessageCardProps {
+  isMine: boolean;
+}
+
+// const InboxMessageCard = styled.li`
+//   padding: 16px;
+//   height: 40px;
+//   font-size: 14px;
+//   color: ${(props: InboxMessageCardProps) => (props.isMine ? '#ffd440' : '#e4e5ed;')};
+// `;
 
 const InboxMessageFormFooter = styled.div`
   display: flex;
