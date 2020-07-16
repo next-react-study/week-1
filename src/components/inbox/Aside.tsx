@@ -25,6 +25,7 @@ function Aside(props: IAdiseProps) {
                         user={user}
                         activeUserId={props.activeUserId}
                         setActiveUserId={props.setActiveUserId}
+                        key={user.id}
                     />
                 ))}
             </InboxListBlock>
